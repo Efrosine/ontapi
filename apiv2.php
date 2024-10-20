@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['REQUEST_URI'], '/a
 
 // **GET /api/sync** - Mengirim semua data dari kolom id, service, tipe, dan command ke ESP
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && strpos($_SERVER['REQUEST_URI'], '/api/sync') !== false) {
-    $query = "SELECT id, service, tipe, command FROM service";
+    $query = "SELECT id, service, tipe, value ,command FROM service";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
